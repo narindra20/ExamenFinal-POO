@@ -15,6 +15,5 @@ public class Personne {
         this.dateDeNaissance = dateDeNaissance;
         this.email = email;
         this.numeroTelephone = numeroTelephone;
-
     }
 }

@@ -28,19 +28,19 @@ public class ExamenTest {
                 Instant.parse("2025-06-01T08:00:00Z"));
 
         var changementNotes3 = new Notes(
-                15,"note initial",
+                8,"note initial",
                 Instant.parse("2025-01-01T08:00:00Z"));
         var changementNotes4 = new Notes(
-                17, "confinement",
+                10, "confinement",
                 Instant.parse("2025-06-01T08:00:00Z"));
 
-        cours1 = new Cours(1, "PROG2", 6, "Mr Toky", 15);
+        cours1 = new Cours(1, "PROG2", List.of(changementNotes1, changementNotes2);
         cours2 = new Cours(2, "Sys", List.of(changementNotes3, changementNotes4));
         Examens = new Examens(1, Instant.parse("2025-02-01T08:00:00Z"), List.of(cours1, cours2));
     }
     @Test
     void get getExamensGrades() {
-        assertEquals(22, Examens.getExamensGrades());
+        assertEquals(18, Examens.getExamensGrades());
         Examens = new Examens(1, Instant.parse("2025-09-01T08:00:00Z"), List.of(cours1));
         assertEquals(22, Examens.getExamensGrades());
     }
