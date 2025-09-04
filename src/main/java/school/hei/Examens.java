@@ -13,6 +13,7 @@ public class Examens {
     private final List<Notes> notes;
 
 
+
     public double getExamensGrades(Examens examens, Etudiants etudiants, Instant t) {
         return notes.stream()
                 .filter(notes -> notes.getDateCreation().isBefore(t))
