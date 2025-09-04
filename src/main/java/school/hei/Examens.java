@@ -1,6 +1,7 @@
 package school.hei;
 
 import java.time.Instant;
+import java.util.Comparator;
 import java.util.List;
 
 public class Examens {
@@ -9,6 +10,16 @@ public class Examens {
     private final List<Cours> cours;
     private final Instant dateDeCreation;
     private final int coefficient;
+    private final List<Notes> notes;
+
+
+    public double getExamensGrades(Examens examens, Etudiants etudiants, Instant t) {
+        return notes.stream()
+                .filter(notes -> notes.getDateCreation().isBefore(t))
+                .max(Comparator.comparing(Notes::getDateCreation))
+                .map(Notes::getMoyenne)
+                .get();
+    }
 
 
 }
